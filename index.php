@@ -1,11 +1,8 @@
 <?php
-$var1 =10;
-$var2 =20;
-$sum = $var1 + $var2;
-echo "Hello World in PHP <br>";
-echo "Hello World in PHP";
-echo "<br>Sum of 2 numbers is $sum";
-echo '<br>Sum of 2 numbers is $sum';
+    // $var1 = 10;
+    // $var2 = 20;
+    $sum = $_GET['var1'] + $_GET['var2'];
+    echo "Sum of 2 variables is $sum";
 ?>
 
 <html>
@@ -13,9 +10,9 @@ echo '<br>Sum of 2 numbers is $sum';
         <title>PHP First Program</title>
     </head>
     <body>
-       <form method="GET" action="index.php">
-           Variable 1 <input type="text" name="var1">
-           Variable 2 <input type="text" name="var2">
+       <form method="get" action="index.php">
+           Variable 1 <input type="text" name='var1'>
+           Variable 2 <input type="text" name='var2'>
            <br>
            <input type = "submit">
        </form> 
