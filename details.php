@@ -15,7 +15,7 @@ else
 }
 ?>
 <?php
- $sql = "SELECT * FROM 'users'";
+ $sql = "SELECT * FROM users";
 
  $result = mysqli_query($conn, $sql);
  if($result->num_rows > 0)
@@ -29,6 +29,8 @@ else
             <th>Email</th>
             <th>Contact</th>
             <th>City</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -42,6 +44,9 @@ else
             <td><?php echo $row['email']?></td>
             <td><?php echo $row['contact']?></td>
             <td><?php echo $row['city']?></td>
+            <td> <a href="edit.php?id=<?php echo $row['id'] ?>">
+                <input type="button" value="Edit"></a></td>
+            <td> <input type="button" value="Delete"></td>
         </tr>
       <?php } ?>
     </tbody>
