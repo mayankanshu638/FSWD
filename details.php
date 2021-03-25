@@ -1,18 +1,5 @@
 <?php
-$hostname = "localhost";
-$username = "root";
-$password = "";
-$databasename = "Web";
-$conn = mysqli_connect($hostname,$username,$password,$databasename);
-if($conn)
-{
-    echo "Connection Successfull";
-
-}
-else
-{
-    echo "Connection Failed" + mysqli_connect_error();
-}
+include('config.php')
 ?>
 <?php
  $sql = "SELECT * FROM users";
@@ -46,7 +33,9 @@ else
             <td><?php echo $row['city']?></td>
             <td> <a href="edit.php?id=<?php echo $row['id'] ?>">
                 <input type="button" value="Edit"></a></td>
-            <td> <input type="button" value="Delete"></td>
+            <td> <a href="delete.php?id=<?php echo $row['id'] ?>">
+            <input type="button" value="Delete"></a></td>
+           
         </tr>
       <?php } ?>
     </tbody>
