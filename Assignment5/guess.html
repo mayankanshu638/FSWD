@@ -18,8 +18,30 @@
             See if you<br>can guess it in 10 terms and fewer. We'll tell you
             If your guess is<br>too high or too low.
         </p>
-        <form>
-            Enter a guess: <input type="text" id="guessField" required> <input type="submit" id="submitGuess" value="Submit guess">
-        </form>
+           Enter a guess: <input type="text" id="guessField" required>
+             <input type="submit" id="submitGuess" value="Submit guess">
+             <p id="error"></p>
+        
+        <script>
+            var y = Math.floor(Math.random() * 100 + 1);
+            var guess = 1;
+            document.getElementById('submitGuess').onclick =function(){
+            var x = document.getElementById('guessField').value;
+            if(x == y)
+            {    
+                    alert("CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "+ guess + " GUESS ");
+            }
+            else if(x > y)
+            {    
+                    guess++;
+                    document.getElementById('error').innerHTML="Last guess was too high!";
+            }
+            else
+             {
+            guess++;
+            document.getElementById('error').innerHTML="Last guess was too low!";
+             }
+            }
+        </script>
     </body>
 </html>
