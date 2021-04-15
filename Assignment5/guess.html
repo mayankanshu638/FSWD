@@ -29,14 +29,15 @@
              <input type="submit" id="submitGuess" value="Submit guess">
              <p id="demo"></p>
              <p id="ans"></p>
+             <p id="rans"></p>
              <p id="error"></p>
              <p id="rst"></p>
-             <p id="rans"></p>
+             
              
         
         <script>
             var y = Math.floor(Math.random() * 100 + 1);
-            var guess = 10;
+            var guess = 1;
             var text=" ";
             document.getElementById('submitGuess').onclick =function(){
             var x = document.getElementById('guessField').value;
@@ -45,13 +46,17 @@
             if(guess>=10)
             {
                     document.getElementById("ans").innerHTML="GAME OVER";
+                    document.getElementById("error").innerHTML="";
                     document.getElementById("rst").innerHTML="<input type=button value=Reset onClick=window.location.reload()>";
 
             }
             else if(x == y)
             {    
                     document.getElementById("demo").innerHTML = "Previous guesses: " + text;
-                    document.getElementById("rans").innerHTML = "Congratulations! You got it right"
+                    document.getElementById("ans").innerHTML="";
+                    document.getElementById("error").innerHTML="";
+                    document.getElementById("rans").innerHTML = "Congratulations! You got it right";
+                    document.getElementById("rst").innerHTML="<input type=button value=Start_New_Game onClick=window.location.reload()>";
             }
             else if(x > y)
             {    
